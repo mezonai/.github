@@ -28,10 +28,11 @@ Mezon is built the opposite way: **own the hot path end to end.** Chat, voice, a
 |---|---|---|
 | **Voice/video SFU** | [mezon-sfu](https://github.com/mezonai/mezon-sfu) | Custom C WebRTC SFU. Lock-free, per-room worker threads; packets are referenced through `io_uring` (`recv` + `SEND_ZC`), never copied. |
 | **Native media engine** | [libmezia](https://github.com/mezonai/libmezia) | C11 client engine for iOS/Android, wire-compatible with mezon-sfu — no full `PeerConnection` tree, no hybrid runtime tax. Hardware-accelerated codecs, lock-minimal Opus voice. |
-| **Protocol / data plane** | [mezon-proto-server](https://github.com/mezonai/mezon-proto-server) · [mezon-protocol](https://github.com/mezonai/mezon-protocol) | High-performance C server on `io_uring` with SQPOLL and fixed files/buffers. Zero-copy encrypt/decrypt via a custom BoringSSL integration straight into registered buffers. |
-| **API / backend** | [mezon-api](https://github.com/mezonai/mezon-api) | Go backend — WebSocket fan-out, worker pools, ScyllaDB queries, Valkey caching, NATS messaging. |
+| **Protocol / data plane** | [mezon-protocol](https://github.com/mezonai/mezon-protocol) | High-performance C server on `io_uring` with SQPOLL and fixed files/buffers. Zero-copy encrypt/decrypt via a custom BoringSSL integration straight into registered buffers. |
+| **API / backend** | Go backend | WebSocket fan-out, worker pools, ScyllaDB queries, Valkey caching, NATS messaging. |
 | **Desktop** | [mezon-desktop](https://github.com/mezonai/mezon-desktop) | Rust + GPUI — renders UI directly on the GPU, not an Electron/Chromium shell. |
-| **Mobile** | [mezon-ios](https://github.com/mezonai/mezon-ios) · [mezon-android](https://github.com/mezonai/mezon-android) | True native Swift and Kotlin clients, not hybrid wrappers. |
+| **iOS** | [mezon-ios](https://github.com/mezonai/mezon-ios) | True native Swift client, not a hybrid wrapper. |
+| **Android** | [mezon-android](https://github.com/mezonai/mezon-android) | True native Kotlin client, not a hybrid wrapper. |
 | **Web** | [mezon](https://github.com/mezonai/mezon) | React/Nx monorepo — the web chat client and admin dashboard. |
 
 Every layer speaks the same lean, binary-first protocol, so there's no translation tax between the client on someone's phone and the server handling millions of connections.
@@ -51,7 +52,7 @@ Every layer speaks the same lean, binary-first protocol, so there's no translati
 - Desktop / iOS / Android: see the [mezon-desktop](https://github.com/mezonai/mezon-desktop), [mezon-ios](https://github.com/mezonai/mezon-ios), and [mezon-android](https://github.com/mezonai/mezon-android) repos for downloads
 
 **Building with Mezon**
-- Start with the [mezon](https://github.com/mezonai/mezon) web repo for the client stack, or dig into [mezon-sfu](https://github.com/mezonai/mezon-sfu) and [libmezia](https://github.com/mezonai/libmezia) for the media internals
+- Start with the [mezon](https://github.com/mezonai/mezon) web repo for the client stack, or dig into [mezon-sfu](https://github.com/mezonai/mezon-sfu), [libmezia](https://github.com/mezonai/libmezia), and [mezon-protocol](https://github.com/mezonai/mezon-protocol) for the media and protocol internals
 - SDKs: [JS/TS](https://github.com/mezonai/mezon-js) · [Go](https://github.com/quangledang23/mezon-sdk-go) · [Java](https://github.com/mezonai/mezon-java-sdk) · [Python](https://github.com/phuvinh010701/mezon-sdk-python) · [.NET](https://github.com/huy-buidoanquang/Mezon.NET) · [NestJS](https://github.com/n0xgg04/nezon)
 - Bots: [bot example repo](https://github.com/mezonai/mezon-bot-example)
 
