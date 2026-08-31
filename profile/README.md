@@ -18,9 +18,24 @@
 
 ## Why Mezon exists
 
-Mezon is a high-performance, lightweight real-time communication technology for communities. Chat, voice, and video respond instantly whether a community has ten members or ten million.
+**Why Mezon?**
 
-Mezon is built the opposite way: **own the hot path end to end.** Chat, voice, and video run on infrastructure we wrote ourselves — native clients on every platform, a custom C server stack, and a purpose-built WebRTC SFU — so there's no generic middleware sitting between a user's action and the network. The result is sub-millisecond response times and support for millions of concurrent connections, on infrastructure that's fully open source.
+We believe communication becomes better when people do things together.
+
+You talk more when you play together.
+You connect more when you work together.
+You build stronger communities when communication and participation happen in the same place.
+
+That’s why Mezon is not just a chat platform.
+
+**Mezon is a Live, Work, Play platform, powered by high-performance, lightweight real-time technology for communities.**
+
+The technology makes communication fast, efficient, and seamless.
+
+The platform makes communication meaningful.
+
+**Communicate. Participate. Connect.**
+
 
 ## The native-first architecture
 
