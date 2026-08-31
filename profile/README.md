@@ -18,7 +18,7 @@
 
 ## Why Mezon exists
 
-Most "Discord alternatives" are thin wrappers around the same generic stack: HTTP APIs, off-the-shelf WebRTC SDKs, a JS server, a hybrid mobile shell. That gets you feature parity, not performance.
+Communities need realtime infrastructure that stays fast at scale — chat, voice, and video that respond instantly whether a community has ten members or ten million. Mezon is built as a high-performance, lightweight realtime platform from the ground up to deliver exactly that.
 
 Mezon is built the opposite way: **own the hot path end to end.** Chat, voice, and video run on infrastructure we wrote ourselves — native clients on every platform, a custom C server stack, and a purpose-built WebRTC SFU — so there's no generic middleware sitting between a user's action and the network. The result is sub-millisecond response times and support for millions of concurrent connections, on infrastructure that's fully open source.
 
