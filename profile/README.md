@@ -29,7 +29,7 @@ Mezon is built the opposite way: **own the hot path end to end.** Chat, voice, a
 | **Voice/video SFU** | [mezon-sfu](https://github.com/mezonai/mezon-sfu) | Custom C WebRTC SFU. Lock-free, per-room worker threads; packets are referenced through `io_uring` (`recv` + `SEND_ZC`), never copied. |
 | **Native media engine** | [libmezia](https://github.com/mezonai/libmezia) | C11 client engine for iOS/Android, wire-compatible with mezon-sfu — no full `PeerConnection` tree, no hybrid runtime tax. Hardware-accelerated codecs, lock-minimal Opus voice. |
 | **Protocol / data plane** | [mezon-protocol](https://github.com/mezonai/mezon-protocol) | High-performance C server on `io_uring` with SQPOLL and fixed files/buffers. Zero-copy encrypt/decrypt via a custom BoringSSL integration straight into registered buffers. |
-| **API / backend** | Go backend | WebSocket fan-out, worker pools, ScyllaDB queries, Valkey caching, NATS messaging. |
+| **Realtime network** | mezon-proto-server | High-performance realtime networking layer handling WebSocket and TCP Abridged for the high-QPS data path. |
 | **Desktop** | [mezon-desktop](https://github.com/mezonai/mezon-desktop) | Rust + GPUI — renders UI directly on the GPU, not an Electron/Chromium shell. |
 | **iOS** | [mezon-ios](https://github.com/mezonai/mezon-ios) | True native Swift client, not a hybrid wrapper. |
 | **Android** | [mezon-android](https://github.com/mezonai/mezon-android) | True native Kotlin client, not a hybrid wrapper. |
