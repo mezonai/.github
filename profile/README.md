@@ -26,7 +26,7 @@ Mezon is built the opposite way: **own the hot path end to end.** Chat, voice, a
 
 | Layer | Repo | What makes it fast |
 |---|---|---|
-| **Voice/video SFU** | [mezon-sfu](https://github.com/mezonai/mezon-sfu) | Custom C WebRTC SFU. Lock-free, per-room worker threads; packets are referenced through `io_uring` (`recv` + `SEND_ZC`), never copied. |
+| **Voice/video SFU** | [mezon-sfu](https://github.com/mezonai/mezon-sfu) | Custom C WebRTC SFU. Lock-free, per-room worker threads; zero-copy packet I/O via `AF_XDP`, with an `io_uring` (`recv` + `SEND_ZC`) fallback. |
 | **Native media engine** | [libmezia](https://github.com/mezonai/libmezia) | C11 client engine for iOS/Android, wire-compatible with mezon-sfu — no full `PeerConnection` tree, no hybrid runtime tax. Hardware-accelerated codecs, lock-minimal Opus voice. |
 | **Protocol / data plane** | [mezon-protocol](https://github.com/mezonai/mezon-protocol) | High-performance C server on `io_uring` with SQPOLL and fixed files/buffers. Zero-copy encrypt/decrypt via a custom BoringSSL integration straight into registered buffers. |
 | **Realtime network** | mezon-proto-server | High-performance realtime networking layer handling WebSocket and TCP Abridged for the high-QPS data path. |
