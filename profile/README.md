@@ -17,9 +17,6 @@
 ---
 
 ## Why Mezon exists
-
-**Why Mezon?**
-
 We believe communication becomes better when people do things together.
 
 You talk more when you play together.
