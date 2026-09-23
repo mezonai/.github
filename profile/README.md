@@ -38,8 +38,8 @@ The platform makes communication meaningful.
 
 | Layer | Repo | What makes it fast |
 |---|---|---|
-| **Voice/video SFU** | [mezon-sfu](https://github.com/mezonai/mezon-sfu) | Custom C WebRTC SFU. Lock-free, per-room worker threads; zero-copy packet I/O via `AF_XDP`, with an `io_uring` (`recv` + `SEND_ZC`) fallback. |
-| **Native media engine** | [libmezia](https://github.com/mezonai/libmezia) | C11 client engine for iOS/Android, wire-compatible with mezon-sfu — no full `PeerConnection` tree, no hybrid runtime tax. Hardware-accelerated codecs, lock-minimal Opus voice. |
+| **Voice/video SFU** | mezon-sfu| Custom C WebRTC SFU. Lock-free, per-room worker threads; zero-copy packet I/O via `AF_XDP`, with an `io_uring` (`recv` + `SEND_ZC`) fallback. |
+| **Native media engine** | libmezia | C11 client engine for iOS/Android, wire-compatible with mezon-sfu — no full `PeerConnection` tree, no hybrid runtime tax. Hardware-accelerated codecs, lock-minimal Opus voice. |
 | **Protocol** | [mezon-protocol](https://github.com/mezonai/mezon-protocol) | Defines the binary data structures (Mezon-Proto) clients use to talk to the server — a lean, protobuf-based wire format instead of verbose JSON/HTTP. |
 | **Realtime network** | mezon-proto-server | High-performance C server on `io_uring` with SQPOLL and fixed files/buffers, handling WebSocket and TCP Abridged. Zero-copy encrypt/decrypt via a custom BoringSSL integration straight into registered buffers. |
 | **Desktop** | [mezon-desktop](https://github.com/mezonai/mezon-desktop) | Rust + GPUI — renders UI directly on the GPU, not an Electron/Chromium shell. |
