@@ -64,7 +64,7 @@ Every layer speaks the same lean, binary-first protocol, so there's no translati
 - Desktop / iOS / Android: see the [mezon-desktop](https://github.com/mezonai/mezon-desktop), [mezon-ios](https://github.com/mezonai/mezon-ios), and [mezon-android](https://github.com/mezonai/mezon-android) repos for downloads
 
 **Building with Mezon**
-- Start with the [mezon](https://github.com/mezonai/mezon) web repo for the client stack, or dig into [mezon-sfu](https://github.com/mezonai/mezon-sfu), [libmezia](https://github.com/mezonai/libmezia), and [mezon-protocol](https://github.com/mezonai/mezon-protocol) for the media and protocol internals
+- Start with the [mezon](https://github.com/mezonai/mezon) web repo for the client stack, or dig into mezon-sfu, libmezia, and [mezon-protocol](https://github.com/mezonai/mezon-protocol) for the media and protocol internals
 - SDKs: [JS/TS](https://github.com/mezonai/mezon-js) · [Go](https://github.com/quangledang23/mezon-sdk-go) · [Java](https://github.com/mezonai/mezon-java-sdk) · [Python](https://github.com/phuvinh010701/mezon-sdk-python) · [.NET](https://github.com/huy-buidoanquang/Mezon.NET) · [NestJS](https://github.com/n0xgg04/nezon)
 - Bots: [bot example repo](https://github.com/mezonai/mezon-bot-example)
 
